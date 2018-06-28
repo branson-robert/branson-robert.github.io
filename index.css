@@ -1,0 +1,27 @@
+body	{
+	background: #4B9CD3;
+	margin-left: 100px;
+	margin-right: 100px;
+	}
+
+h1	{
+	color: black;
+	text-align: center;
+	font-family: Georgia;
+	padding: 10px;
+	}
+
+h2	{
+	color: black;
+	text-align: center;
+	font-family: Sans-serif;
+	padding: 0px;
+	}
+ul  {
+	font-size: 20px;
+}
+
+li  {
+	margin: 10px;
+	font-size: 10px;
+}
