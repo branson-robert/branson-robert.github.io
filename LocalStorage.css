@@ -1,0 +1,28 @@
+body {
+	background: #77d896;
+	margin-left: 100px;
+	margin-right: 100px;
+}
+
+hr {
+	border: solid .5px yellow;
+}
+
+#day {
+	width: 30px;
+}
+
+#year {
+	width: 40px;
+}
+
+#result {
+	width: 800px;
+	height: 600px;
+}
+
+#chosenQuote {
+	text-align: center;
+	padding-top: 20px;
+   
+}
