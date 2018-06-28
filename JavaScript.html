@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<meta charset="UTF-8">
+    <title>JavaScript - Loops, Conditional Statements, Functions, Arrays</title>
+
+<style>
+body {
+	background: #4B9CD3;
+	margin-left: 100px;
+	margin-right: 100px;
+}
+
+#while, #cars {
+	display: none;
+}
+
+hr {
+	border: solid .5px white;
+}
+</style>	 
+  </head>
+  <body>
+  
+
+  <h1>JavaScript - Loops, Conditional Statements, Functions, Arrays</h1>
+  <h2>While loop</h2>
+  <p>Please click the button below:</p>
+  <button type="button" onclick="showOnDisplay()">Boy spots left</button>
+  
+  <div id="while">
+	  <p>How many boys do you want to add</p>
+	  
+	  <input type="number" id="userInput" oninput="numberOfBoys()">
+	  
+	  <p id="result"></p>
+  </div>
+<hr>
+
+<h2>For loop</h2>
+ 
+<p>Enter the number you would like to count up to.</p>
+<p>A number equal to or greater than <strong> ZERO (0) </strong></p>
+	<input id="input" type="number"/>
+	<input id="btn" type="button" value="Start"/>
+	<div id="results"></div>
+<p>Set the variable to a different value and then try again...</p> 
+
+ 
+<hr>  
+  
+  <h2>Arrays</h2>
+  <p>Please click the button below:</p>
+  <button type="button" onclick="showCars()">Car Models</button>
+  
+  <div id="cars">
+	  <p>Which car models would you like to see?</p>
+	  <button id="chevyButton" onclick="carNames(this.id)">Chevy</button>
+	  <button id="cadillacButton" onclick="carNames(this.id)">Cadillac</button>
+	  <button id="buickButton" onclick="carNames(this.id)">Buick</button>
+	  
+	  <p id="choiceOfMake"></p>
+  </div>
+   
+<script>
+//While loop
+function showOnDisplay() {
+   document.getElementById("while").style.display = 'block'; 
+}
+
+function numberOfBoys() {
+   var userNumber = document.getElementById("userInput").value;
+   const pop = 10;
+   let  boys = 0;
+  while (boys < userNumber) {
+	   boys++;
+	}
+   
+   document.getElementById("result").innerHTML = "There's room for " + (pop - boys) + " more boys.";
+}
+
+
+//For loop
+document.getElementById('btn').onclick = function(){
+    var userNumber = parseInt(document.getElementById('input').value);
+    var output = document.getElementById('results');
+    output.innerHTML = '';
+	
+    for(var i = 0; i <= userNumber; i ++) {
+        var item = document.createElement('div');
+        item.innerHTML = i;
+        output.appendChild(item);
+    }
+};
+
+
+//Arrays
+function showCars() {
+   document.getElementById("cars").style.display = 'block';
+}
+
+function carNames(clickedButton) {
+	var chevyCarNames = ['Spark', 'Sonic', 'Cruze', 'Malibu', 'Impala', 'Volt', 'Bolt EV', 'Camaro', 'Corvette'];
+	var cadillacCarNames = ['ATS', 'CTS', 'XTS', 'CT6',];
+	var buickCarNames = ['Regal', 'LaCrosse', 'Cascada'];
+	var userChoice;
+	var result = 'List of car models:<br><br>';
+	
+	switch (clickedButton) {
+		case 'chevyButton':
+			userChoice = chevyCarNames;
+			break;
+		case 'cadillacButton':
+			userChoice = cadillacCarNames;
+			break;
+		case 'buickButton':
+			userChoice = buickCarNames;
+			break;
+	
+	}
+	
+	for (var i = 0; i < userChoice.length; i++) {
+		result += userChoice[i] + "<br>";
+	}
+	
+	document.getElementById("choiceOfMake").innerHTML = result;
+}
+</script>
+
+  
+  </body>
+</html>
