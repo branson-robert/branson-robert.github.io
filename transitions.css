@@ -1,0 +1,35 @@
+body {
+	background: #77d896;
+	margin-left: 100px;
+	margin-right: 100px;
+}
+
+#day{
+	width:500px;
+	height:500px;		
+    background: #000;
+    transition: all 5s ease-in;	
+}
+
+#moon {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  box-shadow: 15px 15px 0 0 white;
+  transition: all 5s ease-in;
+}
+
+#day.getDarker { 
+    background: #76D7EA;
+	transition: all 5s ease-in;
+}
+
+#moon.getLighter { 
+    width:100px;
+	height:100px;
+	border-radius: 50%;
+    background: #FFDF00;
+	margin-left: 100px;
+	transition: all 5s ease-in;
+	box-shadow: 0 0 0 0;
+}

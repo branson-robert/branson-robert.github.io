@@ -1,0 +1,35 @@
+body	{
+	background: #4B9CD3;
+	margin-left: 100px;
+	margin-right: 100px;
+	}
+
+h1	{
+	color: black;
+	text-align: center;
+	font-family: Georgia;
+	padding: 10px;
+	}
+
+h2	{
+	color: black;
+	text-align: center;
+	font-family: Sans-serif;
+	padding: 0px;
+	}
+
+
+p	{
+	color: black;
+	font-size: 20px;
+	}
+
+
+input[type=text] {
+	width: 25%;
+	height: 35px;
+	padding: 12px 20px;
+	margin: 8px 0;
+	box-sizing: border-box;
+	}
+

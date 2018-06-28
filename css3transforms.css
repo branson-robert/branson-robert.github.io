@@ -1,0 +1,54 @@
+body {
+	background: #89cff0;
+	margin-left: 100px;
+	margin-right: 100px;
+}
+
+
+#one{
+	width:100px;
+	height:100px;
+	border-radius:50%;		
+    	background: red;
+}
+
+#two{
+	width:100px;
+	height:100px;
+	border-radius:50%;		
+    	background: yellow;
+}
+
+#three{
+	width:100px;
+	height:100px;
+	border-radius:50%;		
+    	background: green;
+}
+
+
+
+
+.class1, .class2, .class3 {
+	margin-top: 250px;
+	margin-left: 100px;
+	
+
+}
+
+.class1{
+	transform: skewX(43deg) rotateX(90deg) rotateY(90deg) matrix3d(0, 3, 3, 0, 1.90, 100, 2, 0, 0, 0, -100, 0, -400, 0, 1650, 1.5) ;
+	transition-duration: 5s;
+}
+
+.class2{
+	transform: skewX(43deg) rotateX(90deg) rotateY(90deg) matrix3d(0, 3, 3, 0, 1.90, 100, 2, 0, 0, 0, -100, 0, -700, 0, 1925, 1.5) ;
+	transition-duration: 7.5s;
+}
+
+.class3{
+	transform: skewX(43deg) rotateX(90deg) rotateY(90deg) matrix3d(0, 3, 3, 0, 1.90, 100, 2, 0, 0, 0, -100, 0, -1000, 0, 2200, 1.5) ;
+	transition-duration: 10s;
+}
+
+

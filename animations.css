@@ -1,0 +1,52 @@
+body {
+	background: #808080;
+	margin-top: 100px;
+}
+
+.start, #startBall {
+    width: 120px;
+    height: 50px;
+}
+
+
+.ball {
+	position: absolute;
+	width: 100px;
+	height: 100px;
+	background: white;
+	border-radius: 100%;
+}
+
+.floor {
+	margin-top: 510px;
+	border-top:50px solid #000;
+	
+}
+
+@keyframes jump {
+  	0% {bottom: 46%; left:0%}
+	11% {bottom: 0%; left: 10%, width:100px; height:130px; background: white;}
+	10% {bottom: 0%; width:110px; height:50px; background:white;}
+	12% {bottom: 0%; left:15%; width:110px; height:50px; background:red;}
+	16% {bottom: 40%; left:20%; width:100px; height:130px; background:pink;}
+	20% {bottom: 0%; width:100px; height:130px; background: white;}
+	21% {bottom: 0%; width:110px; height:50px; background:white;}
+	22% {bottom: 0%; left:25%; width:110px; height:50px; background:red;}
+	32% {bottom: 30%; left:30%; width:100px; height:130px; background:pink;}
+	36% {bottom: 0%; width:100px; height:130px; background: white;}
+	37% {bottom: 0%; width:110px; height:50px; background:white;}
+	38% {bottom: 0%; left:35%; width:110px; height:50px; background:red;}
+	50% {bottom: 20%; left:40%; width:100px; height:130px; background:pink;}
+	54% {bottom: 0%; width:100px; height:100px; background: white;}
+	55% {bottom: 0%; width:110px; height:50px; background:white;}
+	56% {bottom: 0%; left:45%; width:110px; height:50px; background:red;}
+	66% {bottom: 10%; left:50%; width:100px; height:130px; background:pink;}
+	70% {bottom: 0%; width:100px; height:130px; background: white;}
+	71% {bottom: 0%; width:110px; height:50px; background:white;}
+	72% {bottom: 0%; left:55%; width:110px; height:50px; background:red;}
+	82% {bottom: 5%; left:60%; width:100px; height:130px; background:pink;}
+	86% {bottom: 0%; width:100px; height:130px; background: white;}
+	87% {bottom: 0%; left:65%; width:110px; height:50px; background:red;}
+	100% {bottom: 0%; left:70%; }
+}
+

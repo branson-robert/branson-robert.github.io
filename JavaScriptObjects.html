@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<meta charset="UTF-8">
+    <title>JavaScript - Object Creation Functions, Properties, Methods, Instantiation</title>
+	<link rel="stylesheet" href="jsobjects.css">
+  </head>
+  <body>
+  
+
+  <h1>JavaScript Objects</h1>
+<hr>
+  <h2>Objects</h2>
+  <button class="button button1" onclick="createPerObject()">Create personal data</button>
+  <div id="perObject">
+	<p>Enter date:</p>
+	<input type="text" id="date">
+	<p>Enter your name:</p>
+	<input type="text" id="yourName">
+	<p>Enter weight:</p>
+	<input type="number" id="weight">
+	<p>Enter age:</p>
+	<input type="number" id="age"><br><br><br>
+	<button class="button button2"
+	        onclick="seeObjectProperties(document.getElementById('date').value, document.getElementById('yourName').value, document.getElementById('weight').value, document.getElementById('age').value)">See object properties</button>
+	<p id="objectDisplay"></p>
+  </div>
+<hr>  
+
+   <h2>Methods</h2>
+  <button class="button button2" onclick="createDvdObjects()">Create DVD objects</button>
+  <div id="dvdObjects">
+	  <p>Three objects have been created, find out the DVD's availability:<br></p>
+	  <button class="button button4" id="top" onclick="checkAvailability(this.id)">Top Gun</button>
+	  <button class="button button4" id="tombstone" onclick="checkAvailability(this.id)">Tombstone</button>
+	  <button class="button button4" id="ferris" onclick="checkAvailability(this.id)">Ferris Bueller</button>
+	  <p id="availabilityDisplay"></p>
+  </div>
+  
+   
+   <!--js file name-->
+  <script src="jsobjects1.js"></script>
+  </body>
+</html>

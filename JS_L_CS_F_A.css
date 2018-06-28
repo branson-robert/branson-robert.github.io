@@ -1,0 +1,13 @@
+body {
+	background: #4B9CD3;
+	margin-left: 100px;
+	margin-right: 100px;
+}
+
+#while, #cars {
+	display: none;
+}
+
+hr {
+	border: solid .5px white;
+}
