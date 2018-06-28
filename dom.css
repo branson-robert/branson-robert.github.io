@@ -1,7 +1,8 @@
 ﻿body {
-	background-color: lightblue;
+	background: #4B9CD3;
+	margin-left: 100px;
+	margin-right: 100px;
 }
-
 h1 {
 	color: black;
 	text-align: center;
