@@ -1,130 +1,170 @@
-<header>
-  <h1>JSON and AJAX</h1>
-  <button id="btn">Fetch Info for 3 New Animals</button>
+<!DOCTYPE html>
+<html>
+  <head>
+	<meta charset="UTF-8">
+    <title>JavaScript Events Especially for Mobile Devices (onTouchBegin) and Animation and Transition Events</title>
+	<!--<link rel="stylesheet" href="jsEventsForMobile.css">-->
 <style>
-html, body {
-  padding: 0;
-  margin: 0;
-}
-
-.hide-me {
-  visibility: hidden;
-  opacity: 0;
-  transform: scale(.75);
-}
-
-h1 {
-  margin-top: 0;
-  font-size: 2.4em;
-  font-weight: normal;
-  display: inline-block;
-}
-
 body {
-  font-family: Helvetica, sans-serif;
-  padding: 50px 10%;
+	background: #77d896;
+	margin-left: 100px;
+	margin-right: 100px;
 }
 
-button {
-  background-color: #046380;
-  color: #FFF;
-  border: none;
-  padding: 10px 15px;
-  font-size: 15px;
-  border-radius: 4px;
-  cursor: pointer;
-  outline: none;
-  box-shadow: 2px 2px 0 #034154;
-  margin-bottom: 10px;
-  margin-left: 18px;
-  transition: opacity .4s ease-out, transform .4s ease-out, visibility .4s ease-out;
-  position: relative;
-  top: -10px;
+hr {
+	border: solid .5px yellow;
 }
 
-button:hover {
-  background-color: #034F66;
+#div1 {
+    width: 100px;
+    height: 100px;
+    background: green;
 }
 
-button:active {
-  background-color: #034154;
-  box-shadow: none;
-  position: relative;
-  top: -8px;
-  left: 2px;
+#ex2 {
+	width: 100px;
+	height: 100px;
+	background-size: 100px 100px;
+	background-image: url('images/greendog.jpg');
 }
 
-p {
-  padding: 4px 0 2px 8px;
-  line-height: 1.7;
-  border-bottom: 1px dotted #DDD;
-  list-style: none;
-  margin: 0;
+#div3 {
+	position: absolute;
+    width: 100px;
+    height: 100px;
+    background: #0066FF;
 }
-</style>
-</header>
-<body>
 
-<div id="family-info"></div>
-<script>
-var pageCounter = 1;
-var famCon = document.getElementById("family-info");
-var btn = document.getElementById("btn");
+#jonas {
+	position: absolute;
+    width: 100px;
+    height: 100px;
+/*    background: #FFC1CC;*/
+	border-radius: 100%
+}
+</style>	
+  </head>
+  <body>
+  
+  <hr>
+ 
+  <h2>Code Example 3: OnContextMenu</h2>
+  <p>Click the buffalo and then it will chase after your mouse cursor.</p>
+  <p>Click the right mouse button <b>(onContextMenu)</b> to release it back to its place.</p>
+  <div id="div4"></div>
+  <img src="jonas.jpg" alt="" id="jonas">
+  <br>
+  <br>
+  <br>
+<!--  <br>
+  <br>
+  <h2>Code Example 4: TouchMove Event</h2>
+  <p>Touch, hold, and move this element around your screen (on a mobile device).</p>
+  <div id="div3"></div>-->
+    <script>
+  var doc = document;
+/*
+var rect = doc.getElementById('div1');
 
-btn.addEventListener("click", function() {
-  var ourRequest = new XMLHttpRequest();
-  ourRequest.open('GET', 'https://branson-robert.github.io/family-' + pageCounter + '.json');
-  ourRequest.onload = function() {
-    if (ourRequest.status >= 200 && ourRequest.status < 400) {
-      var ourData = JSON.parse(ourRequest.responseText);
-      renderHTML(ourData);
-    } else {
-      console.log("We connected to the server, but it returned an error.");
-    }
-    
-  };
+var b=0;
+rect.onclick = function() {
+	b += 10;
+	this.style.height = 100+b+'px';
+}
 
-  ourRequest.onerror = function() {
-    console.log("Connection error");
-  };
+var c=0;
+rect.ondblclick = function() {
+	if (c % 2 == 0) {
+		this.style.marginLeft = "100px";
+	} else {
+		this.style.marginLeft = "0px";
+	}
+	
+	c += 1;
+}
 
-  ourRequest.send();
-  pageCounter++;
-  if (pageCounter > 3) {
-    btn.classList.add("hide-me");
-  }
-});
+//mouse move inside of element
+var a=0;
+rect.onmousemove = function() {
+	a++;
+	this.style.width = 100+a+'px';
+}
 
-function renderHTML(data) {
-  var htmlString = "";
 
-  for (i = 0; i < data.length; i++) {
-    htmlString += "<p>" + data[i].FirstName + data[i].LastName + " is a " + data[i].Sex + " that is " + data[i].Age + " years old";
-    
-/*    for (ii = 0; ii < data[i].foods.likes.length; ii++) {
-      if (ii == 0) {
-        htmlString += data[i].foods.likes[ii];
-      } else {
-        htmlString += " and " + data[i].foods.likes[ii];
-      }
-    }
+var dog = doc.getElementById('ex2');
+//mouse hover element
+dog.onmouseenter = function() {
+	this.style.backgroundImage = "url('images/yellowdog.jpg')";
+}
+//mouse leaves element
+dog.onmouseleave = function() {
+	this.style.backgroundImage = "";
+}
 
-    htmlString += ' and dislikes ';
+//press and hold (left or right) button of mouse
+dog.onmousedown = function(event) {
+	this.style.backgroundImage = "url('images/bluedog.jpg')";
+}
 
-    for (ii = 0; ii < data[i].foods.dislikes.length; ii++) {
-      if (ii == 0) {
-        htmlString += data[i].foods.dislikes[ii];
-      } else {
-        htmlString += " and " + data[i].foods.dislikes[ii];
-      }
-    }
+//press button out of element and up button in element
+dog.onmouseup = function() {
+	this.style.backgroundImage = "url('images/purpledog.jpg')";
+}
+
 */
-    htmlString += '.</p>';
+var buf = doc.getElementById("jonas");
 
-  }
-
-  famCon.insertAdjacentHTML('beforeend', htmlString);
+buf.onclick= function(){
+	doc.onmousemove = function(event){
+		buf.style.position = 'fixed';
+		buf.style.left = event.clientX + 'px';
+		buf.style.top = event.clientY + 'px';
+	}
 }
-</script>
-</body>
+
+doc.oncontextmenu = function() {
+	doc.onmousemove = function(event){
+		buf.style = '';
+	}
+	return false;
+}
+
+
+
+var moveEl = doc.getElementById('jonas');
+moveEl.addEventListener('touchmove', function(event) {
+  // If there's exactly one finger inside this element
+  if (event.targetTouches.length == 1) {
+    var touch = event.targetTouches[0];
+    // Place element where the finger is
+    moveEl.style.left = touch.pageX + 'px';
+    moveEl.style.top = touch.pageY + 'px';
+  }
+}, false);
+
+/*
+var touchEl = doc.getElementById('div4');
+touchEl.addEventListener('touchstart', function(event) {
+	console.log("touchstart works");
+  // If there's exactly one finger inside this element
+  if (event.targetTouches.length == 1) {
+    var touch = event.targetTouches[0];
+    // Change color of element
+    touchEl.style.background = '#FFC800';
+  } else if (event.targetTouches.length == 2) {
+    var touch = event.targetTouches[0];
+    // Change color of element
+    touchEl.style.background = 'url(images/bird.png)';
+	touchEl.style.backgroundSize = '200px 200px';
+  }
+}, false);
+
+touchEl.addEventListener('touchend', function(event) {
+	touchEl.style = '';
+}, false);
+*/
+  </script>
+  <!--js file name
+	<script src="jsEventsForMobile.js"></script>-->
+  </body>
 </html>
