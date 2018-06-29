@@ -18,7 +18,7 @@ getArticleInfo.open("GET", "family.json");
 getArticleInfo.send();
 
 getArticleInfo.onreadystatechange = function loadText() {
-  if (getArticleInfo.readyState === 4 && getArticleInfo.status === 200) {
+  if (getArticleInfo.readyState == 4 && getArticleInfo.status == 200) {
 	  familyJson = JSON.parse(getArticleInfo.responseText)
      
   }
