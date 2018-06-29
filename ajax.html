@@ -2,30 +2,76 @@
 <html>
   <head>
 	<meta charset="UTF-8">
-    <title>CIT 261</title>
-	<link rel="stylesheet" href="\index.css">
+<title>AJAX</title>
+	<link rel="stylesheet" href="json.css">
+<script>
+var i = 0;
+var family = "";
+var familyJson = "";
 
+
+function findMember() {
+
+var getArticleInfo = new XMLHttpRequest();
+
+getArticleInfo.open("GET", "family.json");
+getArticleInfo.send();
+
+getArticleInfo.onreadystatechange = function loadText() {
+  if (getArticleInfo.readyState == 4 && getArticleInfo.status == 200) {
+	  familyJson = JSON.parse(getArticleInfo.responseText)
+     
+  }
+};
+
+
+family = document.getElementById("familyName").value;
+
+document.getElementById("message").innerHTML = "Please check your spelling.";
+document.getElementById("first").innerHTML = "<br>";
+document.getElementById("last").innerHTML = "<br>";
+document.getElementById("sex").innerHTML = "<br>";
+document.getElementById("age").innerHTML = "<br>";
+
+
+for (i = 0; i < familyJson.length; i++) {
+
+	if	(familyJson[i].FirstName == family) {
+		document.getElementById("message").innerHTML = "Here is some information about my family:"
+		document.getElementById("first").innerHTML = "First name: <b>" + familyJson[i].FirstName + "</b>";
+		document.getElementById("last").innerHTML = "Last name: <b>" + familyJson[i].LastName + "</b>";
+		document.getElementById("sex").innerHTML = "Sex: <b>" + familyJson[i].Sex + "</b>";
+		document.getElementById("age").innerHTML = "Age: <b>" + familyJson[i].Age + "</b>";
+		} 
+		
+		
+	}
+
+}
+</script>
 </head>
-<body>
+<body onload="findMember()">
 
-<h1>CIT 261</h1>
+<h1> My Family </h1>
+<h2> AJAX Requesting JSON </h2>
+
 <br>
-<h2>Robert Branson's Portfolio</h2>
-<br><br>
-<ul>
-	<li><a href="\JavaScript.html">JavaScript</a> JavaScript - Loops, Conditional Statements, Functions, Variables, Parameters, Arrays, Associative Arrays</li>
-	<li><a href="\JavaScriptObjects.html">JavaScript Objects</a> JavaScript Objects - Object Creation Functions, Inheritance, Properties, Methods, Instantiation </li>
-	<li><a href="\JSON.html">JSON</a> JSON Parse, Stringify </li>
-	<li><a href="\AJAX.html">AJAX</a> AJAX requesting a JSON file </li>
-	<li><a href="\LocalStorage.html">Local Storage</a> Local Storage API, Storing and Retrieving Simple Data, Arrays, Associative Arrays, and Objects</li>
-	<li><a href="\DOM.html">DOM</a> DOM Manipulation Using createElement, appendChild, insertBefore, removeChild, etc. </li>
-	<li><a href="\CSSClass.html">CSS Class</a> Manipulating CSS Class Properties Using JavaScript </li>
-	<li><a href="\csstaa.html">CSS Trans & Anim</a> Creating CSS3 Transitions and Animations in CSS and triggering them with JavaScript</li>
-	<li><a href="\JavaScriptEvents.html">JavaScript Events</a> Standard JavaScript Events Including those for Mobile Devices ( Ex. onTouchBegin, onLoad, etc.) and Animation and Transition Events</li>
-	<li><a href="\HTML5.html">HTML5 Tags</a> HTML5 Tags - Video, Audio, and Canvas </li>
-	<li><a href="\Transitions.html">CSS Transitions</a> Designing, Defining, and Triggering CSS3 Transitions without Custom Libraries </li>
-	<li><a href="\Transforms.html">CSS Transforms</a> Designing, Defining, and Triggering CSS3 Transforms without Custom Libraries </li>
-	<li><a href="\Animations.html">CSS Animations</a> Designing, Defining, and Triggering CSS3 Animations without Custom Libraries </li>
-</ul>	
+<br>
+<div><p>Please enter the name of my family you would like more information about. Please remember to <strong>Capitalize</strong>.</p>
+<br>
+<p><strong>R</strong>obert, <strong>L</strong>aura, <strong>A</strong>shley, <strong>K</strong>yle, <strong>G</strong>race, <strong>A</strong>idan, <strong>L</strong>eif, or <strong>J</strong>onas</p>
+<br>
+<p>Name of family member:</p>
+<br>
+<input type="text" id="familyName" name="familyNames">
+<button type="button" onclick="findMember()">Display</button>
+<br>
+<br>
+<p id="message"><br></p>
+<p id="first"><br></p>
+<p id="last"><br></p>
+<p id="sex"><br></p>
+<p id="age"><br></p>
+
 </body>
 </html>
