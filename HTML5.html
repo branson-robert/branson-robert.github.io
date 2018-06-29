@@ -100,7 +100,7 @@ getArticleInfo.send();
 getArticleInfo.onreadystatechange = function loadText() {
   if (getArticleInfo.readyState === 4) {
     if (getArticleInfo.status === 200) {
-	  familyJson = JSON.parse(getArticleInfo.responseText)
+	 var familyJson = JSON.parse(getArticleInfo.responseText)
     } 
   }
 };
