@@ -11,10 +11,10 @@ var i = 0;
 var family = "";
 var familyJson = "";
 
-
+var getArticleInfo;
 function findMember() {
 
-var getArticleInfo = new XMLHttpRequest();
+getArticleInfo = new XMLHttpRequest();
 
 getArticleInfo.open("GET", "family.json");
 	getArticleInfo.send();
