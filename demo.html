@@ -6,129 +6,81 @@
 	<!--<link rel="stylesheet" href="jsEventsForMobile.css">-->
 <style>
 body {
-	background: #77d896;
+	background: #4B9CD3;
 	margin-left: 100px;
 	margin-right: 100px;
+	margin-top: 100px;
 }
-
 hr {
-	border: solid .5px yellow;
+	border: solid .5px white;
 }
+h1, p	{
+	text-align: center;
+	padding: 10px;
+	}
 
-#div1 {
-    width: 100px;
-    height: 100px;
-    background: green;
-}
-
-#ex2 {
-	width: 100px;
-	height: 100px;
-	background-size: 100px 100px;
-	background-image: url('images/greendog.jpg');
-}
-
-#div3 {
-	position: absolute;
-    width: 100px;
-    height: 100px;
-    background: #0066FF;
-}
 
 #jonas {
 	position: absolute;
-    width: 100px;
-    height: 100px;
-/*    background: #FFC1CC;*/
-	border-radius: 100%
+    width: 200px;
+    height: 200px;
+	border-radius: 100%;
 }
+#desktop {
+	display: block;
+	}
+#mobile {
+	display: none;
+	}
+@media screen and (max-width:768px) {
+	#desktop {
+		display: none;
+		}
+	#mobile {
+		display: block;
+		}
+}		
+
+
+
+
 </style>	
   </head>
   <body>
   
-  <hr>
  
-  <h2>Code Example 3: OnContextMenu</h2>
-  <p>Click the buffalo and then it will chase after your mouse cursor.</p>
-  <p>Click the right mouse button <b>(onContextMenu)</b> to release it back to its place.</p>
-  <div id="div4"></div>
+ 
+<h1>JavaScript Events</h1>
+<hr>
+  <div id="desktop"><p>Left click Jonas <b>(do not hold)</b> and he will chase your mouse around the screen.</p>
+  <p>Right click <b>(do not hold)</b> and move your mouse and he will return to his original position.</p>
+  </div>
+  <div id="mobile"><p>Touch Jonas <b>(do not hold)</b> and move your finger around the screen and he will chase your finger or tap the screen in different spots and he will move there.</p>
+  <p>To reset: touch and hold, let go, and then touch anywhere on the screen or simply reload the page.</p>
+  </div>
   <img src="jonas.jpg" alt="" id="jonas">
   <br>
   <br>
   <br>
-<!--  <br>
-  <br>
-  <h2>Code Example 4: TouchMove Event</h2>
-  <p>Touch, hold, and move this element around your screen (on a mobile device).</p>
-  <div id="div3"></div>-->
     <script>
   var doc = document;
-/*
-var rect = doc.getElementById('div1');
 
-var b=0;
-rect.onclick = function() {
-	b += 10;
-	this.style.height = 100+b+'px';
-}
+var jon = doc.getElementById("jonas");
 
-var c=0;
-rect.ondblclick = function() {
-	if (c % 2 == 0) {
-		this.style.marginLeft = "100px";
-	} else {
-		this.style.marginLeft = "0px";
-	}
-	
-	c += 1;
-}
-
-//mouse move inside of element
-var a=0;
-rect.onmousemove = function() {
-	a++;
-	this.style.width = 100+a+'px';
-}
-
-
-var dog = doc.getElementById('ex2');
-//mouse hover element
-dog.onmouseenter = function() {
-	this.style.backgroundImage = "url('images/yellowdog.jpg')";
-}
-//mouse leaves element
-dog.onmouseleave = function() {
-	this.style.backgroundImage = "";
-}
-
-//press and hold (left or right) button of mouse
-dog.onmousedown = function(event) {
-	this.style.backgroundImage = "url('images/bluedog.jpg')";
-}
-
-//press button out of element and up button in element
-dog.onmouseup = function() {
-	this.style.backgroundImage = "url('images/purpledog.jpg')";
-}
-
-*/
-var buf = doc.getElementById("jonas");
-
-buf.onclick= function(){
+jon.onclick= function(){
 	doc.onmousemove = function(event){
-		buf.style.position = 'fixed';
-		buf.style.left = event.clientX + 'px';
-		buf.style.top = event.clientY + 'px';
+		jon.style.position = 'fixed';
+		jon.style.left = event.clientX + 'px';
+		jon.style.top = event.clientY + 'px';
 	}
 }
 
 doc.oncontextmenu = function() {
 	doc.onmousemove = function(event){
-		buf.style = '';
+		jon.style = '';
 	}
 	return false;
 }
-
 
 
 var moveEl = doc.getElementById('jonas');
@@ -142,27 +94,6 @@ moveEl.addEventListener('touchmove', function(event) {
   }
 }, false);
 
-/*
-var touchEl = doc.getElementById('div4');
-touchEl.addEventListener('touchstart', function(event) {
-	console.log("touchstart works");
-  // If there's exactly one finger inside this element
-  if (event.targetTouches.length == 1) {
-    var touch = event.targetTouches[0];
-    // Change color of element
-    touchEl.style.background = '#FFC800';
-  } else if (event.targetTouches.length == 2) {
-    var touch = event.targetTouches[0];
-    // Change color of element
-    touchEl.style.background = 'url(images/bird.png)';
-	touchEl.style.backgroundSize = '200px 200px';
-  }
-}, false);
-
-touchEl.addEventListener('touchend', function(event) {
-	touchEl.style = '';
-}, false);
-*/
   </script>
   <!--js file name
 	<script src="jsEventsForMobile.js"></script>-->
