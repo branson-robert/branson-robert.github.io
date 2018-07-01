@@ -1,0 +1,42 @@
+body {
+        background: #808080;
+        margin-left: 100px;
+        margin-right: 100px;
+}
+
+h1, h2 {
+        text-align: center;
+}
+
+hr {
+        border: solid .5px #fff;
+}
+
+
+#change {
+
+  transition: font-size 3s, color 2s, background-color 3s;
+  -webkit-transition: width 4s, height 2s, background 6s, -webkit-transform 4s; 
+        transition-delay: 1s;
+}
+
+#div1 {
+  width: 1000px;
+  height: 45px;
+  overflow: hidden;
+  font: 40px "Arial";
+  color: #c0c0c0;
+  background-color: #000;
+}
+
+#digitList.move {
+  margin-left: -10500px;
+  transition-property: margin-left;
+  transition-duration: 50s;
+  transition-timing-function: linear;
+}
+
+
+#change{
+        margin-left:50px;
+}
