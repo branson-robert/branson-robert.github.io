@@ -2,76 +2,44 @@
 <html>
   <head>
 	<meta charset="UTF-8">
-<title>AJAX</title>
-	<link rel="stylesheet" href="json.css">
-<script>
-var i = 0;
-var family = "";
-var familyJson = "";
+    <title>HTML5 Tags - Video, Audio, and Canvas</title>
+	<link rel="stylesheet" href="HTML5Tags.css">
+  </head>
+  <body>
+  
 
-
-function findMember() {
-
-var getArticleInfo = new XMLHttpRequest();
-
-getArticleInfo.open("GET", "family.json");
-getArticleInfo.send();
-
-getArticleInfo.onreadystatechange = function loadText() {
-  if (getArticleInfo.readyState == 4 && getArticleInfo.status == 200) {
-	  familyJson = JSON.parse(getArticleInfo.responseText)
-     
-  }
-};
-
-
-family = document.getElementById("familyName").value;
-
-document.getElementById("message").innerHTML = "Please check your spelling.";
-document.getElementById("first").innerHTML = "<br>";
-document.getElementById("last").innerHTML = "<br>";
-document.getElementById("sex").innerHTML = "<br>";
-document.getElementById("age").innerHTML = "<br>";
-
-
-for (i = 0; i < familyJson.length; i++) {
-
-	if	(familyJson[i].FirstName == family) {
-		document.getElementById("message").innerHTML = "Here is some information about my family:"
-		document.getElementById("first").innerHTML = "First name: <b>" + familyJson[i].FirstName + "</b>";
-		document.getElementById("last").innerHTML = "Last name: <b>" + familyJson[i].LastName + "</b>";
-		document.getElementById("sex").innerHTML = "Sex: <b>" + familyJson[i].Sex + "</b>";
-		document.getElementById("age").innerHTML = "Age: <b>" + familyJson[i].Age + "</b>";
-		} 
-		
-		
-	}
-
-}
-</script>
-</head>
-<body onload="findMember()">
-
-<h1> My Family </h1>
-<h2> AJAX Requesting JSON </h2>
-
+  <h1>HTML5 Tags</h1>
+<hr>
+  <h2>Audio</h2>
+	<img src="lindsey.jpg" id="lindsey" width="300px"><br>
+	<audio controls loop muted preload="metadata"> 
+		<source src="showman_medley.mp3" type="audio/mpeg">
+		<source src="showman_medley.ogg" type="audio/ogg">
+		Your browser does not support the audio tag. Refresh browser!
+	</audio>
+ <hr> 
+  <h2>Video</h2>
+	
+	<video controls poster="showman.jpg" preload="none" width="500px" height="400px"> 
+		<source src="The Greatest Showman (2017).mp4">
+		Your browser does not support the video tag. Refresh browser!
+	</video>
+<hr>	
+	<h2>Canvas</h2>
 <br>
 <br>
-<div><p>Please enter the name of my family you would like more information about. Please remember to <strong>Capitalize</strong>.</p>
-<br>
-<p><strong>R</strong>obert, <strong>L</strong>aura, <strong>A</strong>shley, <strong>K</strong>yle, <strong>G</strong>race, <strong>A</strong>idan, <strong>L</strong>eif, or <strong>J</strong>onas</p>
-<br>
-<p>Name of family member:</p>
-<br>
-<input type="text" id="familyName" name="familyNames">
-<button type="button" onclick="findMember()">Display</button>
+<h1>Welcome to the Olympics</h1>
+<canvas id="myCanvas" width="500" height="500" style="border:2px solid #fff;">
+Your browser does not support the HTML5 canvas tag.</canvas>
 <br>
 <br>
-<p id="message"><br></p>
-<p id="first"><br></p>
-<p id="last"><br></p>
-<p id="sex"><br></p>
-<p id="age"><br></p>
+<button onclick="circleBlue()">Blue</button>
+<button onclick="circleBlack()">Black</button>
+<button onclick="circleRed()">Red</button>
+<button onclick="circleYellow()">Yellow</button>
+<button onclick="circleGreen()">Green</button>	
 
-</body>
+  
+	<script src="HTML5Tags.js"></script>
+  </body>
 </html>
