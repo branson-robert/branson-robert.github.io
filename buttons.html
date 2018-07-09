@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+<style>
+
+.green:hover, .green1:hover, .green2:hover, .green3:hover, .greenEmail:hover, .green1Email:hover, .green2Email:hover, .green3Email:hover {
+	color: blue;
+	margin: 10px;
+    	padding: 10px;
+    	transform: scale(1.5, 1.5);
+}
+
+.green:hover .sales, .green1:hover .srvc, .green2:hover .admin, .green3:hover .hr, .greenEmail:hover .sales, .green1Email:hover .srvc, .green2Email:hover .admin, .green3Email:hover .hr {
+	color: red;
+	font-weight: bold;
+	margin: 10px;
+}
+
+.green, .green1, .green2, .green3, .greenEmail, .green1Email, .green2Email, .green3Email {
+	position: absolute;
+	text-align: center;
+	top:275px;
+}
+.greenEmail, .green1Email, .green2Email, .green3Email {
+	top:150px;
+}
+.green1, .green1Email {
+	left:140px;
+}
+.green2, .green2Email {
+	left:280px;
+}
+.green3, .green3Email {
+	left:420px;
+}
+.sales, .srvc, .admin, .hr {
+	position: absolute;
+	color: black;
+	font-weight: bold;
+	top: 50%;
+	left:50px;
+	transform: translate(-50%, -50%);
+}
+.greenEmail .sales, .green1Email .srvc, .green2Email .admin, .green3Email .hr {
+	position: absolute;
+	color: black;
+	font-weight: bold;
+	top: 60%;
+	left:40px;
+	transform: translate(-50%, -50%);
+}
+</style>
+</head>
+<body>
+
+<h1>Contact Us</h1>
+<h2>Please use the buttons below to contact us.</h2>
+<div class="btnDiv">
+<div class="greenEmail" width="100" height="100">
+<a href="mailto:sales@email.com"><img src="green email.jpg" width="80" height="80"><p class="sales">SALES</p></a>
+</div>
+<div class="green1Email" width="100" height="100">
+<a href="mailto:sales@email.com"><img src="yellow email.png" width="80" height="80"><p class="srvc">SERVICE</p></a>
+</div>
+<div class="green2Email" width="100" height="100">
+<a href="mailto:sales@email.com"><img src="blue email.jpg" width="80" height="80"><p class="admin">ADMIN</p></a>
+</div>
+<div class="green3Email" width="100" height="100">
+<a href="mailto:sales@email.com"><img src="black email.png" width="80" height="80"><p class="hr">HR</p></a>
+</div>
+<br>
+<div class="green" width="100" height="100">
+<a href="tel:123-456-7890"><img src="green-telephone-icon-button.jpg" width="100" height="80"><p class="sales">SALES</p></a>
+</div>
+<div class="green1" width="100" height="100">
+<a href="tel:123-456-7890"><img src="green-telephone-icon-button.jpg" width="100" height="80"><p class="srvc">SERVICE</p></a>
+</div>
+<div class="green2" width="100" height="100">
+<a href="tel:123-456-7890"><img src="green-telephone-icon-button.jpg" width="100" height="80"><p class="admin">ADMIN</p></a>
+</div>
+<div class="green3" width="100" height="100">
+<a href="tel:123-456-7890"><img src="green-telephone-icon-button.jpg" width="100" height="80"><p class="hr">HR</p></a>
+</div>
+<br>
+</div>
+<script>
+</script>
+</body>
+</html>
