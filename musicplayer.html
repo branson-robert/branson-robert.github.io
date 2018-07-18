@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Music Player</title>
+<link rel="stylesheet" href="musicplayer.css" />
+</head>
+<body onload="animateNow()">
+<div id="canvasBox">
+<canvas id="box" style="position: absolute; top:0; left:0; border:0px solid black;"></canvas>
+<article class="player">
+  <h1>Music Player</h1>
+  <br>
+  <br>
+  <br>
+  <div class="spinner-wrap">
+    <div class="spinner_outer"></div>
+    <div class="spinner_center"></div>
+    <div class="play_sprite"></div>
+  </div>
+  <audio id="loop" data-bpm="128">
+	  <source src="hallelujah.mp3" type="audio/mp3" />
+    <source src="hallelujah.ogg" type="audio/ogg" />
+    <!-- <source src="God Bless the U.S.A.mp3" type="audio/mp3" />
+    <source src="God Bless the U.S.A.ogg" type="audio/ogg" /> -->
+  </audio>
+</article>
+</div>
+<script src="jquery-2.1.1.min.js"></script>
+<script src="musicplayer.js" type="text/javascript"></script>
+</body>
+</html>
